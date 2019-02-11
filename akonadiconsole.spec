@@ -5,41 +5,38 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : akonadiconsole
-Version  : 18.08.0
-Release  : 2
-URL      : https://download.kde.org/stable/applications/18.08.0/src/akonadiconsole-18.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.08.0/src/akonadiconsole-18.08.0.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.08.0/src/akonadiconsole-18.08.0.tar.xz.sig
-Summary  : No detailed summary available
+Version  : 18.12.2
+Release  : 3
+URL      : https://download.kde.org/stable/applications/18.12.2/src/akonadiconsole-18.12.2.tar.xz
+Source0  : https://download.kde.org/stable/applications/18.12.2/src/akonadiconsole-18.12.2.tar.xz
+Source99 : https://download.kde.org/stable/applications/18.12.2/src/akonadiconsole-18.12.2.tar.xz.sig
+Summary  : Akonadi management and debugging console
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0 LGPL-2.1
-Requires: akonadiconsole-bin
-Requires: akonadiconsole-lib
-Requires: akonadiconsole-data
-Requires: akonadiconsole-license
+Requires: akonadiconsole-bin = %{version}-%{release}
+Requires: akonadiconsole-data = %{version}-%{release}
+Requires: akonadiconsole-lib = %{version}-%{release}
+Requires: akonadiconsole-license = %{version}-%{release}
 BuildRequires : akonadi-calendar-dev
 BuildRequires : akonadi-contacts-dev
 BuildRequires : akonadi-dev
 BuildRequires : akonadi-mime-dev
 BuildRequires : akonadi-search-dev
-BuildRequires : boost-dev
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : calendarsupport-dev
 BuildRequires : gpgme-dev
-BuildRequires : gpgme-extras
 BuildRequires : kcalcore-dev
 BuildRequires : kcontacts-dev
 BuildRequires : kidentitymanagement-dev
 BuildRequires : kmime-dev
 BuildRequires : kpimtextedit-dev
 BuildRequires : libassuan-dev
-BuildRequires : libgpg-error-dev
 BuildRequires : libkdepim-dev
 BuildRequires : libkleo-dev
 BuildRequires : messagelib-dev
 BuildRequires : pimcommon-dev
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
+BuildRequires : qtbase-dev mesa-dev
 BuildRequires : xapian-core-dev
 
 %description
@@ -48,8 +45,8 @@ No detailed description available
 %package bin
 Summary: bin components for the akonadiconsole package.
 Group: Binaries
-Requires: akonadiconsole-data
-Requires: akonadiconsole-license
+Requires: akonadiconsole-data = %{version}-%{release}
+Requires: akonadiconsole-license = %{version}-%{release}
 
 %description bin
 bin components for the akonadiconsole package.
@@ -66,8 +63,8 @@ data components for the akonadiconsole package.
 %package lib
 Summary: lib components for the akonadiconsole package.
 Group: Libraries
-Requires: akonadiconsole-data
-Requires: akonadiconsole-license
+Requires: akonadiconsole-data = %{version}-%{release}
+Requires: akonadiconsole-license = %{version}-%{release}
 
 %description lib
 lib components for the akonadiconsole package.
@@ -82,27 +79,27 @@ license components for the akonadiconsole package.
 
 
 %prep
-%setup -q -n akonadiconsole-18.08.0
+%setup -q -n akonadiconsole-18.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535424061
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1549922089
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535424061
+export SOURCE_DATE_EPOCH=1549922089
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/akonadiconsole
-cp COPYING %{buildroot}/usr/share/doc/akonadiconsole/COPYING
-cp COPYING.DOC %{buildroot}/usr/share/doc/akonadiconsole/COPYING.DOC
-cp COPYING.LIB %{buildroot}/usr/share/doc/akonadiconsole/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/akonadiconsole
+cp COPYING %{buildroot}/usr/share/package-licenses/akonadiconsole/COPYING
+cp COPYING.DOC %{buildroot}/usr/share/package-licenses/akonadiconsole/COPYING.DOC
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/akonadiconsole/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -132,10 +129,10 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libakonadiconsole.so.5
-/usr/lib64/libakonadiconsole.so.5.9.0
+/usr/lib64/libakonadiconsole.so.5.10.2
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/akonadiconsole/COPYING
-/usr/share/doc/akonadiconsole/COPYING.DOC
-/usr/share/doc/akonadiconsole/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/akonadiconsole/COPYING
+/usr/share/package-licenses/akonadiconsole/COPYING.DOC
+/usr/share/package-licenses/akonadiconsole/COPYING.LIB
