@@ -6,7 +6,7 @@
 #
 Name     : akonadiconsole
 Version  : 19.12.0
-Release  : 17
+Release  : 18
 URL      : https://download.kde.org/stable/release-service/19.12.0/src/akonadiconsole-19.12.0.tar.xz
 Source0  : https://download.kde.org/stable/release-service/19.12.0/src/akonadiconsole-19.12.0.tar.xz
 Source1  : https://download.kde.org/stable/release-service/19.12.0/src/akonadiconsole-19.12.0.tar.xz.sig
@@ -28,7 +28,7 @@ BuildRequires : buildreq-kde
 BuildRequires : calendarsupport-dev
 BuildRequires : gpgme-dev
 BuildRequires : gpgme-extras
-BuildRequires : kcalcore-dev
+BuildRequires : kcalendarcore-dev
 BuildRequires : kcontacts-dev
 BuildRequires : kidentitymanagement-dev
 BuildRequires : kmime-dev
@@ -90,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576607939
+export SOURCE_DATE_EPOCH=1576612666
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -106,7 +106,7 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1576607939
+export SOURCE_DATE_EPOCH=1576612666
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/akonadiconsole
 cp %{_builddir}/akonadiconsole-19.12.0/COPYING %{buildroot}/usr/share/package-licenses/akonadiconsole/7c203dee3a03037da436df03c4b25b659c073976

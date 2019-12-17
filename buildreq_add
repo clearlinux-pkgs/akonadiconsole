@@ -9,7 +9,7 @@ boost-dev
 calendarsupport-dev
 gpgme-dev
 gpgme-extras
-kcalcore-dev
+kcalendarcore-dev
 kcontacts-dev
 kidentitymanagement-dev
 kmime-dev
