@@ -9,6 +9,8 @@ boost-dev
 calendarsupport-dev
 gpgme-dev
 gpgme-extras
+grantlee-dev
+grantleetheme-dev
 kcalendarcore-dev
 kcontacts-dev
 kidentitymanagement-dev
@@ -20,4 +22,5 @@ libkdepim-dev
 libkleo-dev
 messagelib-dev
 pimcommon-dev
+qtwebengine-dev
 xapian-core-dev
