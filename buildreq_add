@@ -22,5 +22,5 @@ libkdepim-dev
 libkleo-dev
 messagelib-dev
 pimcommon-dev
-qtwebengine-dev
+qt6webengine-dev
 xapian-core-dev
