@@ -5,8 +5,6 @@ libKF6ConfigCore.so.6
 libKF6ConfigWidgets.so.6
 libKF6Contacts.so.6
 libKF6CoreAddons.so.6
-libKF6Crash.so.6
-libKF6DBusAddons.so.6
 libKF6I18n.so.6
 libKF6ItemModels.so.6
 libKF6TextWidgets.so.6
