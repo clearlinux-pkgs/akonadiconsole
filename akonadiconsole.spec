@@ -9,7 +9,7 @@
 #
 Name     : akonadiconsole
 Version  : 24.08.2
-Release  : 80
+Release  : 81
 URL      : https://download.kde.org/stable/release-service/24.08.2/src/akonadiconsole-24.08.2.tar.xz
 Source0  : https://download.kde.org/stable/release-service/24.08.2/src/akonadiconsole-24.08.2.tar.xz
 Source1  : https://download.kde.org/stable/release-service/24.08.2/src/akonadiconsole-24.08.2.tar.xz.sig
